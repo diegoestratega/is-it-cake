@@ -1,9 +1,14 @@
 {
+  "version": 2,
   "builds": [
-    { "src": "api/main.py", "use": "@vercel/python" }
+    { "src": "api/main.py",      "use": "@vercel/python" },
+    { "src": "index.html",       "use": "@vercel/static" },
+    { "src": "title.jpg",        "use": "@vercel/static" },
+    { "src": "presentador.jpg",  "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/api/get-cakes", "dest": "/api/main.py" },
-    { "src": "/(.*)",          "dest": "/$1" }
+    { "src": "/api/get-cakes",   "dest": "/api/main.py"  },
+    { "src": "/",                "dest": "/index.html"   },
+    { "src": "/(.*)",            "dest": "/$1"           }
   ]
 }
