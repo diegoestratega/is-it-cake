@@ -1,0 +1,9 @@
+{
+  "builds": [
+    { "src": "api/main.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/get-cakes", "dest": "/api/main.py" },
+    { "src": "/(.*)",          "dest": "/$1" }
+  ]
+}
